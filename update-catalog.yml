@@ -1,0 +1,39 @@
+name: Update community catalog
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs twice daily; GitHub schedule times use UTC.
+    - cron: "17 */12 * * *"
+  push:
+    paths:
+      - "data/sources.json"
+      - "scripts/update_catalog.py"
+      - ".github/workflows/update-catalog.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Update catalog from configured RSS feeds
+        run: python scripts/update_catalog.py
+      - name: Commit updated catalog if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/catalog.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh community catalog"
+            git push
+          else
+            echo "Catalog unchanged."
+          fi

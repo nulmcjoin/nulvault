@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101b16">
+  <meta name="description" content="Katalog komunitas Minecraft Bedrock: addon, texture pack, skin pack, maps, dan template.">
+  <title>BlockVault — Minecraft Bedrock Catalog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topline"><span class="pulse"></span> COMMUNITY CONTENT • MINECRAFT BEDROCK</div>
+  <header class="nav wrap">
+    <a class="brand" href="#"><span class="brand-icon">B</span><span>BLOCK<span class="green">VAULT</span><small>BEDROCK CONTENT HUB</small></span></a>
+    <nav><a href="#catalog">Jelajahi</a><a href="#about">Tentang</a><a href="https://www.minecraft.net/en-us/eula" target="_blank" rel="noopener">Aturan konten ↗</a></nav>
+  </header>
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow">YOUR NEXT WORLD STARTS HERE</div>
+        <h1>Upgrade your<br><span>Minecraft.</span></h1>
+        <p>Temukan addon, texture, skin, maps, dan template Bedrock dari kreator komunitas. Satu katalog, banyak kemungkinan.</p>
+        <a class="primary" href="#catalog">Jelajahi katalog <b>↘</b></a>
+        <div class="hero-stats"><div><strong id="total-count">—</strong><small>ITEM KATALOG</small></div><div><strong>5</strong><small>KATEGORI</small></div><div><strong>FREE</strong><small>TAUTAN LEGAL</small></div></div>
+      </div>
+      <div class="hero-art" aria-label="Ilustrasi blok voxel"><div class="orb"></div><div class="cube cube-a"><i></i></div><div class="cube cube-b"><i></i></div><div class="cube cube-c"><i></i></div><div class="scan"></div><div class="art-tag">BEDROCK / COMMUNITY</div></div>
+    </section>
+    <section class="wrap catalog" id="catalog">
+      <div class="section-head"><div><div class="eyebrow">THE LIBRARY</div><h2>Jelajahi konten</h2><p class="muted">Pilih kategori atau cari konten favoritmu.</p></div><span id="updated-label" class="updated">Memuat katalog…</span></div>
+      <div class="toolbar"><label class="search"><span>⌕</span><input id="search" type="search" placeholder="Cari addon, creator, atau fitur…"></label><select id="sort" aria-label="Urutkan"><option value="new">Terbaru</option><option value="az">Nama A–Z</option></select></div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-category="All">✦ Semua</button><button class="filter" data-category="Addons">⬡ Addons</button><button class="filter" data-category="Texture / Resource">▧ Texture / Resource</button><button class="filter" data-category="Skin Pack">♙ Skin Pack</button><button class="filter" data-category="Maps">▦ Maps</button><button class="filter" data-category="MCTemplate">◈ MCTemplate</button>
+      </div>
+      <div class="results-line"><span id="results-count">Menyiapkan konten…</span><span>TAUTAN MENUJU SUMBER ASLI</span></div>
+      <div class="cards" id="cards"></div>
+      <div id="empty" class="empty" hidden><strong>Belum ada hasil.</strong><p>Coba kata kunci atau kategori lain.</p></div>
+      <p class="footnote">Konten komunitas ditampilkan sebagai katalog. File tidak di-host ulang; periksa izin kreator dan persyaratan sumber sebelum mengunduh.</p>
+    </section>
+    <section class="about wrap" id="about"><div class="about-mark">BV<span>↗</span></div><div><div class="eyebrow">BUILT FOR THE COMMUNITY</div><h2>Discover. Create. Play.</h2><p>BlockVault adalah katalog komunitas independen, bukan situs resmi Minecraft atau Mojang. Data dapat diperbarui otomatis dari RSS feed yang dikonfigurasi pemilik situs.</p></div><a class="outline" href="https://www.minecraft.net/" target="_blank" rel="noopener">Situs resmi Minecraft ↗</a></section>
+  </main>
+  <footer class="wrap"><span>© <span id="year"></span> BLOCKVAULT</span><span>UNOFFICIAL COMMUNITY CATALOG • NOT AFFILIATED WITH MOJANG</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
